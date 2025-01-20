@@ -1,4 +1,7 @@
-import "@testing-library/jest-dom";
+import { expect, afterEach, afterAll, vi } from 'vitest';
+import * as jestDomMatchers from '@testing-library/jest-dom/matchers';
+
+expect.extend(jestDomMatchers);
 
 afterEach(() => {
   vi.clearAllMocks();
@@ -22,3 +25,4 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: vi.fn(),
   })),
 });
+
