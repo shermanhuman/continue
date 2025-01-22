@@ -23,8 +23,6 @@ import {
 } from "core";
 import { GetGhTokenArgs } from "core/protocol/ide";
 
-//console.log('IdeMessengerContext in test file:', IdeMessengerContext);
-
 const mockSubmenuItems = [
   {
     id: "/workspace/package.json",
@@ -63,8 +61,6 @@ const mockSubmenuItems = [
     providerTitle: "file",
   },
 ];
-
-//console.log('mockSubmenuItems:', mockSubmenuItems);
 
 const mockIdeMessenger: IIdeMessenger = {
   ide: {
@@ -124,8 +120,6 @@ const mockIdeMessenger: IIdeMessenger = {
   llmStreamChat: vi.fn(),
 };
 
-//console.log('mockIdeMessenger:', mockIdeMessenger);
-
 const mockStore = configureStore({
   reducer: {
     config: () => ({
@@ -139,11 +133,7 @@ const mockStore = configureStore({
   },
 });
 
-//console.log('mockStore:', mockStore);
-
 const wrapper = ({ children }: { children: React.ReactNode }) => {
-  //console.log('Wrapper function called');
-
   return (
     <Provider store={mockStore}>
       <IdeMessengerContext.Provider value={mockIdeMessenger}>
@@ -183,17 +173,14 @@ describe("SubmenuContextProviders", () => {
       wrapper,
     });
 
-    // Wait until the provider sets "initialLoadComplete" true
-    await act(async () => {
-      await waitFor(() => {
-        // Vitest's waitFor or React Testing Library's waitFor
-        expect(result.current.initialLoadComplete).toBe(true);
-      });
+    await waitFor(() => {
+      expect(result.current.getSubmenuContextItems("file", "")).toHaveLength(
+        mockSubmenuItems.length,
+      );
     });
 
-    // Now query an empty string
     const items = result.current.getSubmenuContextItems("file", "");
-    expect(items.length).toBe(mockSubmenuItems.length);
+    expect(items).toHaveLength(mockSubmenuItems.length);
   });
 
   it("should perform exact match search", async () => {
@@ -249,7 +236,6 @@ describe("SubmenuContextProviders", () => {
     });
 
     const items = result.current.getSubmenuContextItems("file", "S");
-    //console.log('Items from prioritized prefix match search:', items);
     expect(items.length).toBeGreaterThan(1);
 
     const topResults = items.slice(0, 2).map((item) => item.title);
