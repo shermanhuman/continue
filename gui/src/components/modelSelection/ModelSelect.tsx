@@ -25,6 +25,7 @@ import {
 } from "../../util";
 import ConfirmationDialog from "../dialogs/ConfirmationDialog";
 import { Divider } from "./platform/shared";
+import Shortcut from '../gui/Shortcut';
 
 interface ModelOptionProps {
   option: Option;
