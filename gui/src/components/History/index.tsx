@@ -99,49 +99,11 @@ export function History() {
       </div>
 
       {filteredAndSortedSessions.length === 0 && (
-        <>
           <div className="m-4 text-center">
             No past sessions found. To start a new session, either click the{" "}
             <Glyph>+</Glyph>
             button or use the keyboard shortcut: <Shortcut>meta L</Shortcut>
           </div>
-          <div className="m-4 text-center">
-            uparrow: "UpArrow ↑" <Shortcut>uparrow</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            downarrow: "DownArrow ↓" <Shortcut>downarrow</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            leftarrow: "LeftArrow ←" <Shortcut>leftarrow</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            rightarrow: "RightArrow →" <Shortcut>rightarrow</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            enter: "Enter ⏎" <Shortcut>enter</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            meta: <Shortcut>meta</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            ⌘: <Shortcut>⌘</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            Ctrl: <Shortcut>Ctrl</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            Super: <Shortcut>Super</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            alt: <Shortcut>alt</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            option: <Shortcut>option</Shortcut>
-          </div>
-          <div className="m-4 text-center">
-            ⌥: <Shortcut>⌥</Shortcut>
-          </div>
-        </>
       )}
 
       <table className="w-full border-collapse border-spacing-0">
