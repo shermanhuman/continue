@@ -2,6 +2,7 @@ import { SessionMetadata } from "core";
 import MiniSearch from "minisearch";
 import React, { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import Glyph from '../gui/Glyph';
+import Shortcut from '../gui/Shortcut';
 
 import { getFontSize, getMetaKeyLabel } from "../../util";
 import { HistoryTableRow } from "./HistoryTableRow";
@@ -100,8 +101,9 @@ export function History() {
       {filteredAndSortedSessions.length === 0 && (
         <div className="m-4 text-center">
           No past sessions found. To start a new session, either click the <Glyph>+</Glyph>
-          button or use the keyboard shortcut: <kbd>{getMetaKeyLabel()}</kbd> + <kbd>L</kbd>
+          button or use the keyboard shortcut: <Shortcut>meta L, meta K, meta M</Shortcut>
         </div>
+
       )}
 
       <table className="w-full border-collapse border-spacing-0">
