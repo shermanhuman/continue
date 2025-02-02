@@ -17,6 +17,7 @@
 }
 
 :root {
+  /*
   --secondary-dark: rgb(37, 37, 38);
   --vsc-background: rgb(30, 30, 30);
   --button-color: rgb(113, 28, 59);
@@ -26,7 +27,8 @@
   --vscode-editor-background: rgb(30, 30, 30);
   --vscode-editor-foreground: rgb(197, 200, 198);
   --vscode-textBlockQuote-background: rgba(255, 255, 255, 1);
-}
+*/
+  }
 
 html,
 body,
