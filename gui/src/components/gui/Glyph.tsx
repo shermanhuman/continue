@@ -1,33 +1,17 @@
 import type React from "react"
 import styled from "styled-components"
+import { getFontSize } from "../../util";
 import { lightGray } from ".."
-
 const StyledGlyph = styled.span`
   position: relative;
   display: inline-block;
   font-family: var(--monaco-monospace-font);
-  font-size: 22px;
+  font-size: ${String(getFontSize() + 8)}px;
   font-weight: lighter;
   vertical-align: -0.1rem;
-  margin: 0 6px 0 2px;
+  margin: 0.08rem 0.4rem 0.08rem 0.15rem;
   line-height: 0.7;
   color: --vscode-editor-foreground;
-  z-index: 1;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 66%;
-    left: -10%;
-    transform: translateY(-50%);
-    width: 17px;
-    height: 17px;
-    border: 1px solid ${lightGray}33;
-    background-color: ${lightGray}33;
-    border-radius: 3px;
-    box-sizing: border-box;
-    z-index: -1;
-  }
 `
 
 interface GlyphProps {
