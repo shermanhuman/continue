@@ -11,7 +11,8 @@ import { defaultBorderRadius, lightGray, vscBackground } from "..";
 import { getMetaKeyLabel, isJetBrains } from "../../util";
 import { useContext } from "react";
 import { IdeMessengerContext } from "../../context/IdeMessenger";
-import Shortcut from '../gui/Shortcut';
+import Shortcut from "../gui/Shortcut";
+import Glyph from "../gui/Glyph";
 
 interface TutorialCardProps {
   onClose: () => void;
@@ -70,15 +71,15 @@ export function TutorialCard({ onClose }: TutorialCardProps) {
         <li className="flex items-start">
           <PencilSquareIcon className="h-4 w-4 pr-3 align-middle" />
           <span>
-            Highlight code and press <Shortcut>meta I</Shortcut> to
-            quickly make natural language edits
+            Highlight code and press <Shortcut>meta I</Shortcut> to quickly make
+            natural language edits
           </span>
         </li>
         <li className="flex items-start">
           <ClipboardDocumentIcon className="h-4 w-4 pr-3 align-middle" />
           <span>
-            Highlight code and press <Shortcut>meta L</Shortcut> to
-            add it to the chat window
+            Highlight code and press <Shortcut>meta L</Shortcut> to add it to
+            the chat window
           </span>
         </li>
         <li className="flex items-start">
@@ -99,6 +100,19 @@ export function TutorialCard({ onClose }: TutorialCardProps) {
               Read our documentation
             </a>{" "}
             to learn more
+          </span>
+        </li>
+        <li className="flex items-start">
+          <BookOpenIcon className="h-4 w-4 pr-3 align-middle" />
+          <span>
+            <Glyph>add</Glyph>
+            <Glyph>history</Glyph>
+            <Glyph>gear</Glyph>
+            <Glyph>ellipsis</Glyph>
+            <Glyph>photo</Glyph>
+            <Glyph>at-symbol</Glyph>
+            <Glyph>wrench-screwdriver</Glyph>
+            <Glyph>screen-full</Glyph>
           </span>
         </li>
       </ul>
