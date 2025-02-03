@@ -10,6 +10,20 @@
 }
 
 @font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/InterDisplay-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/InterDisplay-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "JetBrains Mono";
   src: url("/fonts/JetBrainsMono/JetBrainsMono-Light.woff2") format("woff2");
   font-weight: 300;
